@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct ImageGallery2App: App {
+    @StateObject var dataModel = DataModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
+            .environmentObject(dataModel)
+//            .navigationViewStyle(.stack)// Deprecated: no haria falta
+//            .navigationSplitViewStyle(.automatic)  /// Tampoco haría falta reemplazarla por este modifier
         }
     }
 }
